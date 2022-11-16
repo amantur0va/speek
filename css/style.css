@@ -1,3 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+body {
+  margin: 0;
+  padding: 0;
+  /* make it look decent enough */
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: tomato;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0 0;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0 100%;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  width: 150px;
+  margin: -100px 0 0 -49px;
+  padding: 50px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+
+.scroll {
+  overflow: hidden;
+}
+
+#header #menuToggle {
+  display: none;
+}
+#header .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+#header .header--navbar {
+  display: flex;
+}
+#header .header--navbar h1 {
+  font-weight: 700;
+  font-size: 30px;
+  color: #173A56;
+  padding-left: 15px;
+}
+#header .header--nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#header .header--nav a {
+  font-weight: 600;
+  font-size: 16px;
+  color: #22343D;
+  transition: 0.4s;
+  padding: 0 20px;
+}
+#header .header--nav a:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  text-decoration-line: underline;
+  color: #173A56;
+}
+#header .header--btn ion-icon {
+  color: #02897A;
+  width: 35px;
+  height: 20px;
+}
+#header .header--btn__one {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 25px;
+  color: #FFFFFF;
+  background: #02897A;
+  border-radius: 4px;
+  transition: 0.4s;
+  background: transparent;
+  color: black;
+}
+#header .header--btn__one:hover {
+  transform: scale(1.1);
+  color: #000;
+  background: transparent;
+}
+#header .header--btn__two {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 25px;
+  color: #FFFFFF;
+  background: #02897A;
+  border-radius: 4px;
+  transition: 0.4s;
+}
+#header .header--btn__two:hover {
+  transform: scale(1.1);
+  color: #000;
+  background: transparent;
+}
 
 /*# sourceMappingURL=style.css.map */
